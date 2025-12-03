@@ -18,6 +18,18 @@ SpeakBot 是一个开源的机器人自然语言控制系统。用户通过手�
 - 🔌 **实时通信** — WebSocket 双向通信，指令状态实时反馈
 - 📱 **跨平台** — React Native + Expo，iOS/Android 一套代码
 
+## 📸 演示
+
+### 功能演示视频
+
+📹 [点击查看演示视频](./ScreenRecording.MP4)
+
+### 控制台日志
+
+| 后端日志 | 移动端日志 |
+|:---:|:---:|
+| ![后端控制台](./backend-screenshot.png) | ![移动端控制台](./mobile-app-screenshot.png) |
+
 ## 🎯 工作原理
 
 ```
@@ -64,7 +76,31 @@ SpeakBot 是一个开源的机器人自然语言控制系统。用户通过手�
 - Node.js 18+ / pnpm
 - [Ollama API Key](https://ollama.com/settings/keys)
 
-### 1. 启动后端
+### 1. 下载 STT 模型
+
+项目使用 FunASR 进行语音识别，需要先下载模型：
+
+```bash
+# 创建模型目录
+mkdir -p /models/FunAudioLLM /models/funasr
+
+# 下载非流式模型 (SenseVoice)
+# https://huggingface.co/FunAudioLLM/SenseVoiceSmall
+# 或 https://modelscope.cn/models/iic/SenseVoiceSmall
+
+# 下载流式模型 (Paraformer)
+# https://huggingface.co/funasr/paraformer-zh-streaming
+# 或 https://modelscope.cn/models/iic/speech_paraformer-large_asr_nat-zh-cn-16k-common-vocab8404-online
+```
+
+下载后修改 `backend/app/config.py` 中的模型路径：
+
+```python
+STT_MODEL_DIR: str = "/your/path/to/SenseVoiceSmall"           # 非流式模型
+STREAMING_STT_MODEL_DIR: str = "/your/path/to/paraformer-zh-streaming"  # 流式模型
+```
+
+### 2. 启动后端
 
 ```bash
 cd backend
@@ -81,7 +117,7 @@ uvicorn main:app --reload --port 8020
 
 验证：http://localhost:8020/docs
 
-### 2. 启动移动端
+### 3. 启动移动端
 
 ```bash
 cd mobile-app
