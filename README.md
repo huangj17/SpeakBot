@@ -8,7 +8,7 @@
 
 SpeakBot 是一个开源的机器人自然语言控制系统。用户通过手机 App 使用**语音或文字**与机器人交互，系统基于 LLM 将自然语言智能解析为机器人可执行的标准指令。
 
-* *理论上，只要有了标准指令，若机器人硬件具备相应的指令接口及执行能力，即可完成对应动作。（目前因缺少实际硬件，👻So...）*
+- _理论上，只要有了标准指令，若机器人硬件具备相应的指令接口及执行能力，即可完成对应动作。（目前因缺少实际硬件，👻So...）_
 
 ## ✨ 特性
 
@@ -25,13 +25,13 @@ SpeakBot 是一个开源的机器人自然语言控制系统。用户通过手�
 <video src="./ScreenRecording-1.MP4" controls width="480">
   您的浏览器不支持视频标签。
 </video>
-📹 [点击查看演示视频](./ScreenRecording-1.MP4)
 
+📹 [点击查看演示视频](./ScreenRecording-1.MP4)
 
 ### 控制台日志
 
-| 后端日志 | 移动端日志 |
-|:---:|:---:|
+|                后端日志                 |                  移动端日志                  |
+| :-------------------------------------: | :------------------------------------------: |
 | ![后端控制台](./backend-screenshot.png) | ![移动端控制台](./mobile-app-screenshot.png) |
 
 ## 🎯 工作原理
@@ -161,11 +161,11 @@ curl -X POST http://localhost:8020/api/nlu/parse \
 ### WebSocket 实时通信
 
 ```javascript
-const ws = new WebSocket('ws://localhost:8020/ws/robot/client_001');
+const ws = new WebSocket("ws://localhost:8020/ws/robot/client_001");
 
 ws.onmessage = (e) => {
   const msg = JSON.parse(e.data);
-  console.log('指令:', msg.data);
+  console.log("指令:", msg.data);
 };
 ```
 
@@ -189,13 +189,13 @@ speakbot/
 
 ## ✅ 已实现
 
-| 模块 | 功能 | 状态 |
-|------|------|------|
-| **NLU** | 自然语言 → 指令解析 | ✅ |
-| **STT** | FunASR 双模式（流式 + 非流式） | ✅ |
-| **WebSocket** | 实时通信 + 自动重连 | ✅ |
-| **状态管理** | Zustand 指令/机器人状态 | ✅ |
-| **UI** | 输入框 + 指令列表 + 状态面板 | ✅ |
+| 模块          | 功能                           | 状态 |
+| ------------- | ------------------------------ | ---- |
+| **NLU**       | 自然语言 → 指令解析            | ✅   |
+| **STT**       | FunASR 双模式（流式 + 非流式） | ✅   |
+| **WebSocket** | 实时通信 + 自动重连            | ✅   |
+| **状态管理**  | Zustand 指令/机器人状态        | ✅   |
+| **UI**        | 输入框 + 指令列表 + 状态面板   | ✅   |
 
 ## 🚧 开发中
 
@@ -205,12 +205,12 @@ speakbot/
 
 ## 🛠️ 技术栈
 
-| 层 | 技术 |
-|---|---|
+| 层       | 技术                                     |
+| -------- | ---------------------------------------- |
 | **后端** | FastAPI, Ollama Cloud, FunASR, WebSocket |
-| **前端** | React Native, Expo 54, TypeScript |
-| **样式** | NativeWind (Tailwind CSS) |
-| **状态** | Zustand |
+| **前端** | React Native, Expo 54, TypeScript        |
+| **样式** | NativeWind (Tailwind CSS)                |
+| **状态** | Zustand                                  |
 
 ## 📖 文档
 
