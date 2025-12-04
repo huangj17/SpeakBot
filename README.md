@@ -22,7 +22,7 @@ SpeakBot 是一个开源的机器人自然语言控制系统。用户通过手�
 
 ### 功能演示视频
 
-📹 [点击查看演示视频](./ScreenRecording.MP4)
+<video src="./ScreenRecording.MP4" controls style="max-width: 100%;"></video>
 
 ### 控制台日志
 
