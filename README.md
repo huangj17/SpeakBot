@@ -1,4 +1,4 @@
-# SpeakBot 🎤🤖
+i# SpeakBot 🎤🤖
 
 > 用自然语言控制机器人 — 说话，它就动
 
@@ -22,11 +22,11 @@ SpeakBot 是一个开源的机器人自然语言控制系统。用户通过手�
 
 ### 功能演示视频
 
-<video src="./ScreenRecording-1.MP4" controls width="480">
+<video src="./ScreenRecording-1.mp4" controls width="480">
   您的浏览器不支持视频标签。
 </video>
 
-📹 [点击查看演示视频](./ScreenRecording-1.MP4)
+📹 [点击查看演示视频](./ScreenRecording-1.mp4)
 
 ### App 界面展示
 
